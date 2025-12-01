@@ -31,6 +31,24 @@
         .content {
             padding: 20px;
         }
+
+         #button {
+            background-color: #2c33aac0;
+            width: 100px;
+            height: 40px;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .container {
+            margin: 20px;
+        }
     </style>
 </head>
 
@@ -69,7 +87,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <form method="post">
-    Username: <input type="text" name="username" required><br>
-    Password: <input type="password" name="password" required><br>
-    <button type="submit">Login</button>
+    <div class="container">
+        <strong>Username:</strong> <input type="text" name="username" required><br><br>
+        <strong>Password</strong> <input type="password" name="password" required><br><br>
+        <button type="submit" id="button">Login</button>
+    </div>
 </form>

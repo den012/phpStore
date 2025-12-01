@@ -38,7 +38,7 @@ $line_items = [];
 foreach ($cart_items as $item) {
     $line_items[] = [
         'price_data' => [
-            'currency' => 'usd', // sau 'ron', 'eur', etc.
+            'currency' => 'usd',
             'product_data' => [
                 'name' => $item['name'],
             ],

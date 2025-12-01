@@ -31,6 +31,23 @@
         .content {
             padding: 20px;
         }
+        #button {
+            background-color: #2f39abc0;
+            width: 100px;
+            height: 40px;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .container {
+            margin: 20px;
+        }
     </style>
 </head>
 
@@ -55,11 +72,12 @@ require_once 'DBController.php';
 // există un controller pentru baza de date
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Criptăm parola
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $email = $_POST['email'];
     $db = new DBController();
-    $query = "INSERT INTO users (username, password) VALUES (?, ?)";
+    $query = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
     try {
-        $db->updateDB($query, [$username, $password]);
+        $db->updateDB($query, [$username, $password, $email]);
         echo "Înregistrare reușită!";
     } catch (Exception $e) {
         echo "Eroare: " . $e->getMessage();
@@ -67,7 +85,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <form method="post">
-    Username: <input type="text" name="username" required><br>
-    Password: <input type="password" name="password" required><br>
-    <button type="submit">Register</button>
+    <div class="container">
+        <strong>Username:</strong> <input type="text" name="username" required><br><br>
+        <strong>Password:</strong> <input type="password" name="password" required><br><br>
+        <strong>Email:</strong> <input type="email" name="email" required><br><br>
+        <button type="submit" id="button">Register</button>
+    </div>
 </form>
