@@ -69,6 +69,7 @@ try {
 
     <div class="content">
         <h2>Bine ai venit!</h2>
+        <img src="https://e-store.ro/wp-content/uploads/2024/02/e-Store-Logo-Mascote-Final-dreptunghiular.png">
     </div>
 
 </body>
