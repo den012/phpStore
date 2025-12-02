@@ -68,7 +68,7 @@ try {
     </div>
 
     <div class="content">
-        <h2>Bine ai venit!</h2>
+        <h2>Bine ati venit!</h2>
                 <?php if($isAdmin): ?>
             <h2>Esti conectat ca administrator!!</h2>
         <?php endif; ?>
