@@ -1,0 +1,21 @@
+# Composer dependencies
+/vendor/
+
+# Environment files
+.env
+.env.*
+
+# IDE stuff
+/.idea/
+/.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Cache
+/cache/
+/tmp/
